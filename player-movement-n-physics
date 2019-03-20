@@ -1,0 +1,28 @@
+using UnityEngine;
+using Sistem.Collections;
+
+public class Player : Monobehavior;
+
+  public float speed = 10;
+  Vector3 velocity;
+  //RigidBody gonna make the object stop when it colide with others
+  RigidBody myRigidBody;
+  
+  void Start ()
+  {
+    //turn the object into a rigid body when the game starts
+    myRigidBody = GetComponent <RigidBody> ();
+  }
+  
+  void Update ()
+  {
+    //defining the player movement into the input (keys to each direction)
+    Vector3 input = new Vector3(Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+    Vector3 direction = input.normalized;
+    velocity = direction * speed;
+  }
+  
+  void FixedUpdate ()
+  {
+    myRigidBody.position += velocity * Time.deltaTime;
+  }
