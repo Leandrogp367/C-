@@ -1,1 +1,41 @@
+using UnityEngine;
+using Sistem.Collections;
 
+public class Actor : Monobehavior;
+
+  public float speed = 10;
+  int coinCount;
+  Vector3 velocity;
+  //RigidBody gonna make the object stop when it colide with others
+  //the object have to be a rigid body for the engine to read the collisions of it
+  RigidBody myRigidBody;
+  
+  void Start ()
+  {
+    //turn the object into a rigid body when the game starts
+    myRigidBody = GetComponent <RigidBody> ();
+  }
+  
+  void Update ()
+  {
+    //defining the player movement into the input (keys to each direction)
+    Vector3 input = new Vector3(Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+    Vector3 direction = input.normalized;
+    velocity = direction * speed;
+  }
+  
+  void FixedUpdate ()
+  {
+    myRigidBody.position += velocity * Time.deltaTime;
+  }
+  
+  void OnTriggerEnter (Collider triggerCollider)
+  {
+    //adds a condition that makes the collectable disapear and print a counter of how many you got
+    if (triggerCollider.tag = "Collectable")
+    {
+      Destroy (triggerCollider.gameObject);
+      coinCount ++;
+      print (coinCount);
+    }
+  }
