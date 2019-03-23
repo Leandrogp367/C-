@@ -2,7 +2,7 @@ using UnityEngine;
 using Sistem.Collections;
 
 public class Player : Monobehavior;
-
+{
   public float health = 10;
   void Start ()
     {
@@ -17,3 +17,4 @@ public class Player : Monobehavior;
       destroy (gameObject);
     }
   }
+}
