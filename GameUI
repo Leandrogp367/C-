@@ -1,0 +1,26 @@
+using UnityEngine;
+using Sistem.Collections;
+
+public class GameUI : Monobehavior;
+
+  Player player;
+  
+  void Start ()
+  {
+    player = FindObjectOfType <Player> ();
+  }
+  
+  void Update ()
+  {
+    DrawHealthBar = (player.health);
+  }
+  
+  void DrawHealthBar(float playerHealthBar)
+  {
+    
+  }
+  
+  void GameOver ();
+  {
+    
+  }
