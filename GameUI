@@ -2,7 +2,7 @@ using UnityEngine;
 using Sistem.Collections;
 
 public class GameUI : Monobehavior;
-
+{
   Player player;
   
   void Start ()
@@ -24,3 +24,4 @@ public class GameUI : Monobehavior;
   {
     
   }
+}
