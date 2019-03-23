@@ -2,7 +2,7 @@ using UnityEngine;
 using Sistem.Collections;
 
 public class Player : Monobehavior;
-
+{
   public float speed = 10;
   Vector3 velocity;
   //RigidBody gonna make the object stop when it colide with others
@@ -26,3 +26,4 @@ public class Player : Monobehavior;
   {
     myRigidBody.position += velocity * Time.deltaTime;
   }
+}
