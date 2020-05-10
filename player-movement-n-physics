@@ -10,7 +10,7 @@ public class Player : Monobehavior;
   
   void Start ()
   {
-    //turn the object into a rigid body when the game starts
+    //references rigid body when the game starts
     myRigidBody = GetComponent <RigidBody> ();
   }
   
